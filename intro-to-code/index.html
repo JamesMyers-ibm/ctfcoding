@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        var nameEntered = false;
+        function buttonPress(){
+            
+            entered = document.getElementById("name").value;
+            alert("You entered: " + entered);
+            document.getElementById("tableName").innerHTML=entered;
+            nameEntered = true;
+        }
+        function cookiepress(){
+            if(nameEntered == false){
+                alert("Enter Name");
+                return;
+            }
+            else{
+                count = document.getElementById("cookieTable").innerHTML;
+                count++;
+         
+                document.getElementById("cookieTable").innerHTML = count
+            }
+        }
+        function cookieReset(){
+            count = document.getElementById("cookieTable").innerHTML;
+            document.getElementById("cookieTable").innerHTML = 0;
+
+        }
+    </script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Webpage test   </title>
+        <style>
+            p{
+                color: red;
+            }
+            *{
+                font-family: 'Comic Sans MS', cursive;
+                text-align: center;
+                
+                
+            }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            body{
+                background: linear-gradient(to top, white 0%, lightblue 50%, blue 100%);
+                background-attachment: fixed;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <img src="images/ibm.webp" alt="Logo of IBM" width="100px" height="50px">
+
+        <form>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <button type ="button" onclick="buttonPress()">Submit</button>
+        </form>
+        <br>
+        <br>
+        <br>    
+        <table>
+            <tr>
+                <th><span id="tableName">Name</span> has clicked: </th>
+
+            </tr>
+            <tr>
+                <td><span id="cookieTable">0</span> cookies</td>
+            </tr>
+
+        </table>
+       
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <button type="button" onclick="cookiepress()" style="border:none;"><img src="images/OIP.jpg" height="100px" width="100px" alt="Cookie"></button>
+
+        
+        <br>
+        <a href="http://127.0.0.1:5500/intro-to-code/index.html?name=button">reset</a>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>
